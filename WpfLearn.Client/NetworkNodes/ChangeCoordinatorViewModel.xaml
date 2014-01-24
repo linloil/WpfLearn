@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:networkNodes="clr-namespace:WpfLearn.Client.NetworkNodes">
+    <DataTemplate x:Key="ChangeCoordinatorViewModel" DataType="networkNodes:ChangeCoordinatorViewModel">
+        
+        <StackPanel>
+            <ListBox SelectedItem="{Binding SelectedCoordinator}" ItemsSource="{Binding Coordinators}" DisplayMemberPath="Name" Name="list" />
+            <Button Content="OK" Command="{Binding SelectCoordinatorCommand}" CommandParameter="{Binding ElementName=list, Path=SelectedItem}" />
+        </StackPanel>
+
+    </DataTemplate>
+</ResourceDictionary>

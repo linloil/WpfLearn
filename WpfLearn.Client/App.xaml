@@ -1,0 +1,14 @@
+﻿<Application x:Class="WpfLearn.Client.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="Common\MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="NetworkNodes\WorkstationListViewModel.xaml"/>
+                <ResourceDictionary Source="NetworkNodes\WorkstationViewModel.xaml"/>
+                <ResourceDictionary Source="NetworkNodes\ChangeCoordinatorViewModel.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

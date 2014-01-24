@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WpfLearn.Server.NetworkNodes" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WpfLearn.Server.NetworkNodes" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/WpfLearn.Server" />
+  <xs:complexType name="ArrayOfWorkstationDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkstationDto" nillable="true" type="tns:WorkstationDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkstationDto" nillable="true" type="tns:ArrayOfWorkstationDto" />
+  <xs:complexType name="WorkstationDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkstationDto" nillable="true" type="tns:WorkstationDto" />
+  <xs:complexType name="Workstation">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/WpfLearn.Server" base="q1:DomainObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Coordinator" nillable="true" type="tns:Coordinator" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Workstation" nillable="true" type="tns:Workstation" />
+  <xs:complexType name="Coordinator">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/WpfLearn.Server" base="q2:DomainObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Coordinator" nillable="true" type="tns:Coordinator" />
+  <xs:complexType name="ArrayOfCoordinator">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Coordinator" nillable="true" type="tns:Coordinator" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCoordinator" nillable="true" type="tns:ArrayOfCoordinator" />
+</xs:schema>

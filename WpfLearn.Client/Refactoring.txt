@@ -1,0 +1,15 @@
+﻿1. Смена ОРМ.
+   а. Написать новые версии NetworkObject-ов (Workstation, Coordinator, NetworkNode, User, NetworkGroup, Division, LinkableNetworkObject) с использованием NH.
+   б. Совместно с этим переводить соответствующие объектам OperationExecutor-ы на использование новых версий объектов.
+      Action-ы по-прежнему используют старые объекты. Отрефакторить тесты.
+2. Рефакторинг NetworkObject-ов: переработка связей с другими объектами, отвязывание от репозитория.
+3. Тот же алгоритм для ролей. Плюс к этому создать класс группы ролей, объединить роль с AppliedTaskRule.
+----
+4. Асинхронное управление связями LinkableNetworkObject-ов. 
+----
+5. Рефакторинг LicenceInfo
+6. Структура БД
+7. Dynamic-и в интерфейсе
+8. Связка ModificationPipeline + PipelineBuilder + Actions
+9. Работа с DO вместо DTO на интерфейсе при изменении объектов
+10. QueryObject

@@ -1,0 +1,20 @@
+﻿<Window x:Class="WpfLearn.Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:client="clr-namespace:WpfLearn.Client"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.Resources>
+            <client:MainDataTemplateSelector x:Key="selector" />
+        </Grid.Resources>
+
+        <ListBox Grid.Column="0" Name="leftPane" ItemsSource="{Binding Path=Items}" DisplayMemberPath="Caption" />
+
+        <GridSplitter Grid.Column="0" Width="5"></GridSplitter>
+
+        <ContentPresenter Grid.Column="1" Content="{Binding ElementName=leftPane, Path=SelectedItem}" ContentTemplateSelector="{StaticResource selector}" />
+    </Grid>
+</Window>
