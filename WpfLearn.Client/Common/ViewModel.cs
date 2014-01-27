@@ -11,8 +11,8 @@ namespace WpfLearn.Client
 {
     public abstract class ViewModel : INotifyPropertyChanged
     {
-        protected static readonly IService _service = ServiceLocator.Resolve<IService>();
-        protected static readonly IDialogService _dialogService = ServiceLocator.Resolve<IDialogService>();
+        protected static readonly IService _service = ServiceLocator.ResolveService();
+        protected static readonly IDialogService _dialogService = ServiceLocator.ResolveDialogService();
         public event PropertyChangedEventHandler PropertyChanged;
 
         public virtual string Caption

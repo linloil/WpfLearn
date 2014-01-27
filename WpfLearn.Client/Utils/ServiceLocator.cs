@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using Microsoft.Practices.Unity;
 
 using WpfLearn.Client.WcfService;
 
@@ -11,20 +7,26 @@ namespace WpfLearn.Client
 {
     public class ServiceLocator
     {
-        private static readonly IUnityContainer _container;
+        private static readonly DialogService _dialogService;
+        private static readonly IService _service;
+
 
         static ServiceLocator()
         {
-            _container = new UnityContainer();
-
-            _container.RegisterInstance(typeof(IService), new ServiceClient());
-            _container.RegisterInstance(typeof(IDialogService), new DialogService());
+            _service = new ServiceClient();
+            _dialogService = new DialogService();
         }
 
 
-        public static T Resolve<T>()
+        public static IDialogService ResolveDialogService()
         {
-            return _container.Resolve<T>();
+            return _dialogService;
+        }
+
+
+        public static IService ResolveService()
+        {
+            return _service;
         }
     }
 }
